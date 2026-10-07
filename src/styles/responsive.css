@@ -1,0 +1,167 @@
+/* Keyboard shortcut hints only make sense with a real keyboard and mouse. */
+.shortcut-hint {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .shortcut-hint {
+    display: block;
+  }
+}
+
+/* Small phones (320–359px) */
+@media (max-width: 359px) {
+  :root {
+    --gutter: 12px;
+  }
+
+  .game-stats {
+    padding: 8px 14px;
+  }
+
+  .stat__value {
+    font-size: 1.3125rem;
+  }
+
+  .game-stats__stars {
+    font-size: 18px;
+  }
+
+  .control-btn {
+    min-height: 58px;
+    font-size: 0.75rem;
+  }
+
+  .control-btn__badge {
+    top: 4px;
+    right: 5px;
+  }
+
+  .level-grid {
+    gap: 8px;
+  }
+
+  .level-card {
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+
+  .play-btn {
+    min-height: 64px;
+    font-size: 1.375rem;
+  }
+
+  .setting {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .setting__icon {
+    display: none;
+  }
+}
+
+/* Short screens (small phones, landscape): tighten the chrome so the board keeps its size. */
+@media (max-height: 640px) {
+  .game {
+    padding-top: max(6px, env(safe-area-inset-top));
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .game-header {
+    min-height: 48px;
+  }
+
+  .game-stats {
+    margin-top: 4px;
+    padding: 6px 14px;
+  }
+
+  .stat__value {
+    font-size: 1.25rem;
+  }
+
+  .game-message {
+    margin-top: 6px;
+  }
+
+  .board-area {
+    margin: 4px 0 10px;
+  }
+
+  .control-btn {
+    min-height: 54px;
+  }
+
+  .shortcut-hint {
+    display: none;
+  }
+
+  .home__hero {
+    padding-top: 16px;
+  }
+
+  .home__actions {
+    margin-top: 24px;
+  }
+}
+
+/* Phones in landscape: controls on the left, board filling the height on the right. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .game {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) auto;
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 24px;
+    max-width: 920px;
+  }
+
+  .game > * {
+    grid-column: 1;
+  }
+
+  .game > .board-area {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    width: calc(100dvh - 24px);
+    min-height: 0;
+    margin: 0;
+  }
+
+  .game-message {
+    align-self: center;
+  }
+}
+
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+  }
+
+  .screen {
+    padding-top: 20px;
+  }
+
+  .level-grid {
+    gap: 12px;
+  }
+
+  .level-card {
+    font-size: 1.25rem;
+  }
+
+  .game-controls {
+    gap: 12px;
+  }
+
+  .about {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 800px) {
+  .board-area {
+    margin-top: 16px;
+  }
+}
